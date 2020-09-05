@@ -14,7 +14,7 @@ const SvgMap = () => {
                     background="#FFFFFF"
                     toolbarProps={{position: 'none'}}
                     miniatureProps={{position: 'none', background: '#FFFFFF', width: 0, height: 0}}>
-                    <svg width={pageWidth} height={pageHeight}>
+                    <svg>
                         {content}
                     </svg>  
                 </UncontrolledReactSVGPanZoom>
