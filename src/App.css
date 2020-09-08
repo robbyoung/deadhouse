@@ -8,3 +8,7 @@
 .map {
     z-index: 0;
 }
+
+.hidden {
+    display: none !important;
+}
