@@ -6,9 +6,9 @@ import SvgMap from '../../components/svg-map';
 jest.mock('react-svg-pan-zoom');
 
 describe('SvgMap component', () => {
-    const component = renderer.create(<SvgMap src="genabackis-map.svg" />);
-
     it('Renders an SVG image', () => {
+        const component = renderer.create(<SvgMap src="genabackis-map.svg" />);
+
         expect(component).toMatchSnapshot();
     });
 });

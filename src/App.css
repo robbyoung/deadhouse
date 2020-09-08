@@ -1,0 +1,10 @@
+.filters {
+    margin: 20px;
+    position: fixed;
+    width: 400px;
+    z-index: 1;
+}
+
+.map {
+    z-index: 0;
+}
