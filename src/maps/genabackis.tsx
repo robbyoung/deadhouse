@@ -13,6 +13,10 @@ const genabackisOptions: MultiSelectOption[] = [
         label: 'Rivers and Lakes',
         value: 'layer4',
     },
+    {
+        label: 'Mountains',
+        value: 'layer5',
+    },
 ];
 
 export default genabackisOptions;
