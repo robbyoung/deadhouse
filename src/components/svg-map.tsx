@@ -10,6 +10,7 @@ const SvgMap = (props: SvgMapProps): JSX.Element => {
     const {src} = props;
     const pageWidth = window.innerWidth;
     const pageHeight = window.innerHeight;
+
     return (
         <div>
             <ReactSvgPanZoomLoader
