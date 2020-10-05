@@ -9,18 +9,20 @@ export interface ToolbarItem {
 export interface ToolbarProps {
     items: ToolbarItem[];
     startingIndex: number;
+    onSelect: (selectedName: string) => void;
 }
 
 const Toolbar = (props: ToolbarProps): JSX.Element => {
-    const {items, startingIndex} = props;
+    const {items, startingIndex, onSelect} = props;
     const [toolbarIndex, updateToolbarIndex] = useState(startingIndex);
 
     return (
         <div>
             <div className="toolbar">
                 {items.map((item, index) => (
+                    // eslint-disable-next-line
                     <p
-                        onClick={() => updateToolbarIndex(index)}
+                        onClick={(): void => updateToolbarIndex(index)}
                         className={
                             toolbarIndex === index
                                 ? 'toolbar-item selected'
@@ -32,7 +34,12 @@ const Toolbar = (props: ToolbarProps): JSX.Element => {
             </div>
             <div className="sub-toolbar">
                 {items[toolbarIndex].subItems.map((subItem) => (
-                    <p className="toolbar-item">{subItem}</p>
+                    // eslint-disable-next-line
+                    <p
+                        onClick={(): void => onSelect(subItem)}
+                        className="toolbar-item">
+                        {subItem}
+                    </p>
                 ))}
             </div>
         </div>

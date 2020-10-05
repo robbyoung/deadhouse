@@ -2,8 +2,21 @@ import React, {useState} from 'react';
 import SvgMap from './svg-map';
 import MultiSelect, {MultiSelectOption} from './multi-select';
 import Toolbar from './toolbar';
-import {MapData} from '../maps/genabackis';
+import genabackis, {MapData} from '../maps/genabackis';
+import sevenCities from '../maps/seven-cities';
+
 import './map-controller.css';
+
+function getMapData(name: string): MapData | undefined {
+    switch (name) {
+        case 'Genabackis':
+            return genabackis;
+        case 'Seven Cities':
+            return sevenCities;
+        default:
+            return undefined;
+    }
+}
 
 function showHideMapLayers(
     selection: MultiSelectOption[],
@@ -25,15 +38,11 @@ function showHideMapLayers(
     });
 }
 
-interface MapControllerProps {
-    data: MapData;
-}
+function MapController(): JSX.Element {
+    const [currentMap, setMap] = useState(genabackis);
+    const [currentLayers, setLayers] = useState(currentMap.layers);
 
-function MapController(props: MapControllerProps): JSX.Element {
-    const {data} = props;
-    const [selectedOptions, setMapOptions] = useState(data.layers);
-
-    showHideMapLayers(selectedOptions, data.layers);
+    showHideMapLayers(currentLayers, currentMap.layers);
 
     return (
         <div className="App">
@@ -44,26 +53,29 @@ function MapController(props: MapControllerProps): JSX.Element {
                             name: 'Maps',
                             subItems: ['Genabackis', 'Seven Cities'],
                         },
-                        {
-                            name: 'Deck of Dragons',
-                            subItems: ['Dark', 'Chains'],
-                        },
                     ]}
                     startingIndex={0}
+                    onSelect={(mapName): void => {
+                        const mapData = getMapData(mapName);
+                        if (mapData) {
+                            setMap(mapData);
+                            setLayers(mapData.layers);
+                        }
+                    }}
                 />
                 <div className="filters">
                     <MultiSelect
                         title="Map Features"
-                        options={data.layers}
-                        selected={selectedOptions}
+                        options={currentMap.layers}
+                        selected={currentLayers}
                         onSelectionChange={(selection): void =>
-                            setMapOptions(selection)
+                            setLayers(selection)
                         }
                     />
                 </div>
             </div>
             <div className="map">
-                <SvgMap src={data.src} />
+                <SvgMap src={currentMap.src} />
             </div>
         </div>
     );
