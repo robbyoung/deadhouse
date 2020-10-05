@@ -23,6 +23,7 @@ const Toolbar = (props: ToolbarProps): JSX.Element => {
                     // eslint-disable-next-line
                     <p
                         onClick={(): void => updateToolbarIndex(index)}
+                        key={`toolbar-${item.name}`}
                         className={
                             toolbarIndex === index
                                 ? 'toolbar-item selected'
@@ -37,6 +38,7 @@ const Toolbar = (props: ToolbarProps): JSX.Element => {
                     // eslint-disable-next-line
                     <p
                         onClick={(): void => onSelect(subItem)}
+                        key={`toolbar-${subItem}`}
                         className="toolbar-item">
                         {subItem}
                     </p>
