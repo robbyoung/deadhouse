@@ -22,7 +22,7 @@ const genabackis: MapData = {
         },
         {
             label: 'Mountains',
-            value: 'layer5',
+            value: 'layer7',
         },
         {
             label: 'Forests',
