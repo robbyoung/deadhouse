@@ -1,0 +1,50 @@
+p {
+    font-family: 'Mortal Wave';
+    margin: 0px;
+}
+
+.header {
+    width: 100%;
+    background-color: #161616;
+    text-align: center;
+    color: whitesmoke;
+    padding: 15px;
+}
+
+.title {
+    font-size: 50px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-top: -15px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 750px;
+    margin: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-button {
+    margin: 25px;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #161616;
+    text-align: center;
+    color: whitesmoke;
+    padding: 15px;
+    font-size: 18px;
+}

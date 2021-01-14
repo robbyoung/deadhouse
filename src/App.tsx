@@ -1,8 +1,8 @@
 import React from 'react';
-import MapController from './components/map-controller';
+import HomeScreen from './components/home-screen';
 
 function App(): JSX.Element {
-    return <MapController />;
+    return <HomeScreen />;
 }
 
 export default App;
