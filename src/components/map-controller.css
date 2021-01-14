@@ -1,8 +1,14 @@
+.overlay {
+    height: 200px;
+    width: 100%;
+    opacity: 0.9;
+    position: fixed;
+    z-index: 1;
+}
+
 .filters {
     margin: 20px;
-    position: fixed;
     width: 400px;
-    z-index: 1;
 }
 
 .map {

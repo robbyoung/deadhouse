@@ -5,7 +5,7 @@ export interface MapData {
     layers: MultiSelectOption[];
 }
 
-const genabackisOptions: MapData = {
+const genabackis: MapData = {
     src: 'genabackis-map.svg',
     layers: [
         {
@@ -22,7 +22,7 @@ const genabackisOptions: MapData = {
         },
         {
             label: 'Mountains',
-            value: 'layer5',
+            value: 'layer7',
         },
         {
             label: 'Forests',
@@ -31,4 +31,4 @@ const genabackisOptions: MapData = {
     ],
 };
 
-export default genabackisOptions;
+export default genabackis;
