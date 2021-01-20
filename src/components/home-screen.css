@@ -8,7 +8,13 @@ p {
     background-color: #161616;
     text-align: center;
     color: whitesmoke;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.home-link {
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 .title {
@@ -45,6 +51,7 @@ p {
     background-color: #161616;
     text-align: center;
     color: whitesmoke;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-size: 18px;
 }

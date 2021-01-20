@@ -6,11 +6,6 @@ import './home-screen.css';
 function HomeScreen(): JSX.Element {
     return (
         <div className="page">
-            <div className="header">
-                <p className="title">Kurald Galain</p>
-                <p className="subtitle">A Malazan Book of the Fallen Fansite</p>
-            </div>
-
             <div className="content">
                 <Link to="/genabackis">
                     <img

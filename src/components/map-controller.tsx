@@ -1,22 +1,9 @@
 import React, {useState} from 'react';
 import SvgMap from './svg-map';
 import MultiSelect, {MultiSelectOption} from './multi-select';
-import Toolbar from './toolbar';
-import genabackis, {MapData} from '../maps/genabackis';
-import sevenCities from '../maps/seven-cities';
+import {MapData} from '../maps/genabackis';
 
 import './map-controller.css';
-
-function getMapData(name: string): MapData | undefined {
-    switch (name) {
-        case 'Genabackis':
-            return genabackis;
-        case 'Seven Cities':
-            return sevenCities;
-        default:
-            return undefined;
-    }
-}
 
 function showHideMapLayers(
     selection: MultiSelectOption[],
@@ -38,8 +25,12 @@ function showHideMapLayers(
     });
 }
 
-function MapController(): JSX.Element {
-    const [currentMap, setMap] = useState(genabackis);
+interface MapControllerProps {
+    mapData: MapData;
+}
+
+function MapController(props: MapControllerProps): JSX.Element {
+    const {mapData: currentMap} = props;
     const [currentLayers, setLayers] = useState(currentMap.layers);
 
     showHideMapLayers(currentLayers, currentMap.layers);
@@ -47,7 +38,7 @@ function MapController(): JSX.Element {
     return (
         <div className="App">
             <div className="overlay">
-                <Toolbar
+                {/* <Toolbar
                     items={[
                         {
                             name: 'Maps',
@@ -62,7 +53,7 @@ function MapController(): JSX.Element {
                             setLayers(mapData.layers);
                         }
                     }}
-                />
+                /> */}
                 <div className="filters">
                     <MultiSelect
                         title="Map Features"
