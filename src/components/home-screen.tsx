@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import './home-screen.css';
 
@@ -11,36 +12,27 @@ function HomeScreen(): JSX.Element {
             </div>
 
             <div className="content">
-                <img
-                    className="map-button"
-                    alt="Genabackis Map Thumbnail"
-                    src="continent-icons/genabackis-icon.svg"
-                />
-                <img
-                    className="map-button"
-                    alt="Seven Cities Map Thumbnail"
-                    src="continent-icons/seven-cities-icon.svg"
-                />
-                <img
-                    className="map-button"
-                    alt="Quon Tali Map Thumbnail"
-                    src="continent-icons/quon-tali-icon.svg"
-                />
-                <img
-                    className="map-button"
-                    alt="Genabackis Map Thumbnail"
-                    src="continent-icons/genabackis-icon.svg"
-                />
-                <img
-                    className="map-button"
-                    alt="Seven Cities Map Thumbnail"
-                    src="continent-icons/seven-cities-icon.svg"
-                />
-                <img
-                    className="map-button"
-                    alt="Quon Tali Map Thumbnail"
-                    src="continent-icons/quon-tali-icon.svg"
-                />
+                <Link to="/genabackis">
+                    <img
+                        className="map-button"
+                        alt="Genabackis Map Thumbnail"
+                        src="continent-icons/genabackis-icon.svg"
+                    />
+                </Link>
+                <Link to="/seven-cities">
+                    <img
+                        className="map-button"
+                        alt="Seven Cities Map Thumbnail"
+                        src="continent-icons/seven-cities-icon.svg"
+                    />
+                </Link>
+                <Link to="/quon-tali">
+                    <img
+                        className="map-button"
+                        alt="Quon Tali Map Thumbnail"
+                        src="continent-icons/quon-tali-icon.svg"
+                    />
+                </Link>
             </div>
 
             <div className="footer">
