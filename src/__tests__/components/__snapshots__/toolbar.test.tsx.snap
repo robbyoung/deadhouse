@@ -1,74 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toolbar component Can render a toolbar tab with no options 1`] = `
-<div>
+exports[`Toolbar component Can render a toolbar with basic navigation 1`] = `
+Array [
   <div
-    className="toolbar"
+    className="header"
   >
-    <p
-      className="toolbar-item"
+    <a
+      className="home-link"
+      href="/"
       onClick={[Function]}
     >
-      Tab 1
-    </p>
-    <p
-      className="toolbar-item"
-      onClick={[Function]}
-    >
-      Tab 2
-    </p>
-    <p
-      className="toolbar-item selected"
-      onClick={[Function]}
-    >
-      Tab 3
-    </p>
-  </div>
-  <div
-    className="sub-toolbar"
-  />
-</div>
-`;
-
-exports[`Toolbar component Can render a toolbar tab with some options 1`] = `
-<div>
-  <div
-    className="toolbar"
-  >
-    <p
-      className="toolbar-item selected"
-      onClick={[Function]}
-    >
-      Tab 1
-    </p>
-    <p
-      className="toolbar-item"
-      onClick={[Function]}
-    >
-      Tab 2
-    </p>
-    <p
-      className="toolbar-item"
-      onClick={[Function]}
-    >
-      Tab 3
-    </p>
-  </div>
-  <div
-    className="sub-toolbar"
-  >
-    <p
-      className="toolbar-item"
-      onClick={[Function]}
-    >
-      Option 1
-    </p>
-    <p
-      className="toolbar-item"
-      onClick={[Function]}
-    >
-      Option 2
-    </p>
-  </div>
-</div>
+      <p
+        className="title"
+      >
+        Kurald Galain
+      </p>
+      <p
+        className="subtitle"
+      >
+        A Malazan Book of the Fallen Fansite
+      </p>
+    </a>
+  </div>,
+  ",",
+  <div />,
+]
 `;

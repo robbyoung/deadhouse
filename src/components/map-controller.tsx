@@ -38,22 +38,6 @@ function MapController(props: MapControllerProps): JSX.Element {
     return (
         <div className="App">
             <div className="overlay">
-                {/* <Toolbar
-                    items={[
-                        {
-                            name: 'Maps',
-                            subItems: ['Genabackis', 'Seven Cities'],
-                        },
-                    ]}
-                    startingIndex={0}
-                    onSelect={(mapName): void => {
-                        const mapData = getMapData(mapName);
-                        if (mapData) {
-                            setMap(mapData);
-                            setLayers(mapData.layers);
-                        }
-                    }}
-                /> */}
                 <div className="filters">
                     <MultiSelect
                         title="Map Features"

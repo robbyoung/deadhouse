@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import Toolbar from '../../components/toolbar';
+import MapSelector from '../../components/map-selector';
 
-describe('Toolbar component', () => {
-    it('Can render a toolbar with basic navigation', () => {
+describe('MapSelector component', () => {
+    it('Can render a list of map buttons', () => {
         const component = renderer.create(
             <Router>
-                <Toolbar />,
+                <MapSelector />
                 <Switch>
                     <Route path="/">
                         <div />
