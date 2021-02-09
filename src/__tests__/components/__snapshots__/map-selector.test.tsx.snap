@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapSelector component Can render a list of map buttons 1`] = `
+Array [
+  <div
+    className="map-selection"
+  >
+    <a
+      href="/genabackis"
+      onClick={[Function]}
+    >
+      <img
+        alt="Genabackis Map Thumbnail"
+        className="map-button"
+        src="continent-icons/genabackis-icon.svg"
+      />
+    </a>
+    <a
+      href="/seven-cities"
+      onClick={[Function]}
+    >
+      <img
+        alt="Seven Cities Map Thumbnail"
+        className="map-button"
+        src="continent-icons/seven-cities-icon.svg"
+      />
+    </a>
+    <a
+      href="/quon-tali"
+      onClick={[Function]}
+    >
+      <img
+        alt="Quon Tali Map Thumbnail"
+        className="map-button"
+        src="continent-icons/quon-tali-icon.svg"
+      />
+    </a>
+  </div>,
+  <div />,
+]
+`;

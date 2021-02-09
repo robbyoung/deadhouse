@@ -7,34 +7,6 @@ exports[`MapController component Can render a map and a feature filter 1`] = `
   <div
     className="overlay"
   >
-    <div>
-      <div
-        className="toolbar"
-      >
-        <p
-          className="toolbar-item selected"
-          onClick={[Function]}
-        >
-          Maps
-        </p>
-      </div>
-      <div
-        className="sub-toolbar"
-      >
-        <p
-          className="toolbar-item"
-          onClick={[Function]}
-        >
-          Genabackis
-        </p>
-        <p
-          className="toolbar-item"
-          onClick={[Function]}
-        >
-          Seven Cities
-        </p>
-      </div>
-    </div>
     <div
       className="filters"
     >

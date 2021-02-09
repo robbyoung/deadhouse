@@ -9,7 +9,7 @@ interface SvgMapProps {
 const SvgMap = (props: SvgMapProps): JSX.Element => {
     const {src} = props;
     const pageWidth = window.innerWidth;
-    const pageHeight = window.innerHeight;
+    const pageHeight = window.innerHeight - 95;
 
     return (
         <div>

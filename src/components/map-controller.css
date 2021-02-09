@@ -1,6 +1,5 @@
 .overlay {
     height: 200px;
-    width: 100%;
     opacity: 0.9;
     position: fixed;
     z-index: 1;

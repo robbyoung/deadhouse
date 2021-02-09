@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import Toolbar from '../../components/toolbar';
+import HomeScreen from '../../components/home-screen';
 
-describe('Toolbar component', () => {
-    it('Can render a toolbar with basic navigation', () => {
+describe('Home screen component', () => {
+    it('Can render the home screen', () => {
         const component = renderer.create(
             <Router>
-                <Toolbar />,
+                <HomeScreen />,
                 <Switch>
                     <Route path="/">
                         <div />

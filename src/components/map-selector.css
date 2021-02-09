@@ -1,0 +1,28 @@
+.map-selection {
+    display: flex;
+    flex-wrap: wrap;
+    width: 750px;
+    margin: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-button {
+    margin: 25px;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.map-button:hover {
+    opacity: 0.9;
+}
+
+.map-button:active {
+    opacity: 0.8;
+}
