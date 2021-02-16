@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
+import {Menu, MenuItem, ProSidebar, SubMenu} from 'react-pro-sidebar';
 import SvgMap from './svg-map';
 import MultiSelect, {MultiSelectOption} from './multi-select';
 import {MapData} from '../maps/genabackis';
 
 import './map-controller.css';
+import Sidebar from './sidebar';
 
 function showHideMapLayers(
     selection: MultiSelectOption[],
@@ -36,18 +38,9 @@ function MapController(props: MapControllerProps): JSX.Element {
     showHideMapLayers(currentLayers, currentMap.layers);
 
     return (
-        <div className="App">
+        <div>
             <div className="overlay">
-                <div className="filters">
-                    <MultiSelect
-                        title="Map Features"
-                        options={currentMap.layers}
-                        selected={currentLayers}
-                        onSelectionChange={(selection): void =>
-                            setLayers(selection)
-                        }
-                    />
-                </div>
+                <Sidebar />
             </div>
             <div className="map">
                 <SvgMap src={currentMap.src} />
