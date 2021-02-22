@@ -1,12 +1,18 @@
 import React from 'react';
-import {FaMap} from 'react-icons/fa';
+import {FaMap, FaTree} from 'react-icons/fa';
 import {GiFootsteps} from 'react-icons/gi';
 import {Menu, MenuItem, ProSidebar, SubMenu} from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import {Link} from 'react-router-dom';
+import {MapData} from '../maps/genabackis';
 import './sidebar.css';
 
-function Sidebar(): JSX.Element {
+interface SidebarProps {
+    mapData: MapData;
+    onFeatureSelect: (key: string) => void;
+}
+function Sidebar(props: SidebarProps): JSX.Element {
+    const {mapData, onFeatureSelect} = props;
     return (
         <ProSidebar collapsed>
             <Menu>
@@ -20,6 +26,15 @@ function Sidebar(): JSX.Element {
                     <MenuItem>
                         <Link to="/quon-tali">Quon Tali</Link>
                     </MenuItem>
+                </SubMenu>
+                <SubMenu icon={<FaTree size={22} />} title="Features">
+                    {mapData.layers.map((layer) => (
+                        <MenuItem>
+                            <p onClick={() => onFeatureSelect(layer.value)}>
+                                {layer.label}
+                            </p>
+                        </MenuItem>
+                    ))}
                 </SubMenu>
                 <SubMenu icon={<GiFootsteps size={40} />} title="Paths">
                     <SubMenu title="Gardens of the Moon">

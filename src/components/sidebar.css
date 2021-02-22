@@ -1,3 +1,7 @@
 .pro-sidebar > .pro-sidebar-inner {
     background: #161616;
 }
+
+p {
+    font-size: 22px;
+}
