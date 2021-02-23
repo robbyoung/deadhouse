@@ -1,22 +1,29 @@
 button {
+    display: flex;
     background: transparent;
     box-shadow: 0px 0px 0px transparent;
     border: 0px solid transparent;
     text-shadow: 0px 0px 0px transparent;
+    color: #adadad;
+    cursor: pointer;
+    margin: 5px;
 }
 
 button:hover {
-    background: transparent;
-    box-shadow: 0px 0px 0px transparent;
-    border: 0px solid transparent;
-    text-shadow: 0px 0px 0px transparent;
-}
-
-button:active {
-    outline: none;
-    border: none;
+    opacity: 0.8;
 }
 
 button:focus {
-    outline: 0;
+    outline: none;
+}
+
+button > p {
+    font-family: 'Mortal Wave';
+    font-size: 25px;
+    padding-left: 5px;
+}
+
+button > .checkbox {
+    font-size: 20px;
+    padding-top: 4px;
 }
