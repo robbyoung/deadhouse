@@ -1,4 +1,4 @@
-import {MapData} from './genabackis';
+import {MapData} from '../state';
 
 const sevenCities: MapData = {
     src: 'seven-cities-map.svg',
@@ -6,10 +6,12 @@ const sevenCities: MapData = {
         {
             label: 'Outline',
             value: 'layer1',
+            toggledOn: true,
         },
         {
             label: 'Rivers and Lakes',
             value: 'layer3',
+            toggledOn: true,
         },
     ],
 };

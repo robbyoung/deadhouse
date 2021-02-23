@@ -4,15 +4,16 @@ import {GiFootsteps} from 'react-icons/gi';
 import {Menu, MenuItem, ProSidebar, SubMenu} from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import {Link} from 'react-router-dom';
-import {MapData} from '../maps/genabackis';
+import {ToggleableSvgLayer} from '../state';
+import SidebarToggle from './sidebar-toggle';
 import './sidebar.css';
 
 interface SidebarProps {
-    mapData: MapData;
+    features: ToggleableSvgLayer[];
     onFeatureSelect: (key: string) => void;
 }
 function Sidebar(props: SidebarProps): JSX.Element {
-    const {mapData, onFeatureSelect} = props;
+    const {features, onFeatureSelect} = props;
     return (
         <ProSidebar collapsed>
             <Menu>
@@ -28,12 +29,11 @@ function Sidebar(props: SidebarProps): JSX.Element {
                     </MenuItem>
                 </SubMenu>
                 <SubMenu icon={<FaTree size={22} />} title="Features">
-                    {mapData.layers.map((layer) => (
-                        <MenuItem>
-                            <p onClick={() => onFeatureSelect(layer.value)}>
-                                {layer.label}
-                            </p>
-                        </MenuItem>
+                    {features.map((feature) => (
+                        <SidebarToggle
+                            toggle={feature}
+                            onToggle={(value): void => onFeatureSelect(value)}
+                        />
                     ))}
                 </SubMenu>
                 <SubMenu icon={<GiFootsteps size={40} />} title="Paths">

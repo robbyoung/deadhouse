@@ -1,18 +1,16 @@
 import React, {useState} from 'react';
 import SvgMap from './svg-map';
-import {MapData} from '../maps/genabackis';
 
 import './map-controller.css';
 import Sidebar from './sidebar';
+import {MapData, ToggleableSvgLayer} from '../state';
 
-function showHideMapLayers(selection: string[], mapData: MapData): void {
-    const available = mapData.layers.map((layer) => layer.value);
-    available.forEach((layer) => {
-        const element = document.getElementById(layer);
-        const isSelected = selection.find((option) => option === layer);
+function showHideMapLayers(layers: ToggleableSvgLayer[]): void {
+    layers.forEach((layer) => {
+        const element = document.getElementById(layer.value);
 
         if (element) {
-            if (isSelected) {
+            if (layer.toggledOn) {
                 element.classList.remove('hidden');
             } else {
                 element.classList.add('hidden');
@@ -27,27 +25,29 @@ interface MapControllerProps {
 
 function MapController(props: MapControllerProps): JSX.Element {
     const {mapData: currentMap} = props;
-    const [currentLayers, setLayers] = useState(
-        currentMap.layers.map((layer) => layer.value),
-    );
+    const [currentLayers, setLayers] = useState(currentMap.layers);
 
-    showHideMapLayers(currentLayers, currentMap);
+    showHideMapLayers(currentLayers);
 
     return (
         <div>
             <div className="overlay">
                 <Sidebar
-                    mapData={currentMap}
-                    onFeatureSelect={(layer): void => {
-                        let newLayers: string[];
-                        if (currentLayers.find((option) => option === layer)) {
-                            newLayers = currentLayers.filter(
-                                (option) => option !== layer,
-                            );
-                        } else {
-                            newLayers = [...currentLayers, layer];
+                    features={currentLayers}
+                    onFeatureSelect={(selected): void => {
+                        const matchingIndex = currentLayers.findIndex(
+                            (layer) => layer.value === selected,
+                        );
+                        const newLayers = [...currentLayers];
+
+                        if (matchingIndex !== -1) {
+                            newLayers[matchingIndex] = {
+                                ...currentLayers[matchingIndex],
+                                toggledOn: !currentLayers[matchingIndex]
+                                    .toggledOn,
+                            };
+                            setLayers(newLayers);
                         }
-                        setLayers(newLayers);
                     }}
                 />
             </div>

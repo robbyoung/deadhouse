@@ -1,7 +1,4 @@
-import {FaMap, FaWifi} from 'react-icons/fa';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import React, {useState} from 'react';
-import {Menu, MenuItem, ProSidebar, SubMenu} from 'react-pro-sidebar';
+import React from 'react';
 import 'react-pro-sidebar/dist/css/styles.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import HomeScreen from './components/home-screen';
